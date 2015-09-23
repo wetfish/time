@@ -1,0 +1,9 @@
+{
+  "name": "wetfish-time",
+  "version": "0.0.0",
+  "description": "Time since the birth of wetfish",
+  "author": "Rachel Fish <rachel@wetfish.net> (https://wetfish.net)",
+  "dependencies": {
+    "wetfish-basic": "^0.7.7"
+  }
+}
