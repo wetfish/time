@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Super basic time tracker!</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            
+        </style>
+
+        <script src="node_modules/wetfish-basic/dist/basic.js"></script>
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script src="tracker.js"></script>
+    </head>
+    <body>
+        <main class="app">
+            <h1>What are you doing?</h1>
+
+            <div class="activities" v-for="activity in activities">
+                <div class="activity">
+                    {{ activity.title }}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+
+
+
