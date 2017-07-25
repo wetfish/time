@@ -9,7 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <style>
-            
+            button { color: #000 }
+            .activity {
+                border: 1px solid #000;
+                margin: 0 1em 1em 0;
+                padding: 0 1em 1em;
+            }
         </style>
 
         <script src="node_modules/wetfish-basic/dist/basic.js"></script>
@@ -22,12 +27,30 @@
 
             <div class="activities" v-for="activity in activities">
                 <div class="activity">
-                    {{ activity.title }}
+                    <h2>{{ activity.title }}</h2>
+
+                    <ul>
+                        <ol>
+                            Vacuuming
+
+                            <button class="start-activity">Start</button>
+                        </ol>
+
+                        <ol>
+                            Dishes
+
+                            <button class="start-activity">Start</button>
+                        </ol>
+                    </ul>
+
+                    <button class="create-task">New Task</button>
+                    <button class="start-activity">Start</button>
                 </div>
             </div>
+
+            <hr>
+
+            <button class="create-activity">New Activity</button>
         </main>
     </body>
 </html>
-
-
-
