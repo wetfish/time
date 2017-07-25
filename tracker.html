@@ -29,15 +29,9 @@
                 <div class="activity">
                     <h2>{{ activity.title }}</h2>
 
-                    <ul>
+                    <ul v-for="task in activity.tasks">
                         <ol>
-                            Vacuuming
-
-                            <button class="start-activity">Start</button>
-                        </ol>
-
-                        <ol>
-                            Dishes
+                            {{ task.title }}
 
                             <button class="start-activity">Start</button>
                         </ol>
