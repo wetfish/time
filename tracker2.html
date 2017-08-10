@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Super basic time tracker VERSION 2!</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body {
+                background-color: #00BFFF;
+                margin: 0;
+            }
+
+            button { color: #000 }
+            .activity {
+                border: 1px solid #000;
+                margin: 0 1em 1em 0;
+                padding: 0 1em 1em;
+            }
+
+            .sky {
+                align-items: center;
+                background-image: url('cloud.svg');
+                background-repeat: no-repeat;
+                background-position: 54% 50%;
+                background-size: 75%;
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+            }
+
+            .rainbow {
+                margin-top: -32vh;
+                height: 20vh;
+                width: 20%;
+            }
+
+            svg circle {
+                fill: none;
+                transform-origin: center;
+            }
+
+            .r { animation: spin 13s linear infinite; }
+            .o { animation: spin 8s linear infinite; }
+            .y { animation: spin 5s linear infinite; }
+            .g { animation: spin 3s linear infinite; }
+            .b { animation: spin 2s linear infinite; }
+            .v { animation: spin 1s linear infinite; }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            .timer {
+                position: absolute;
+                top: 70vh;
+                width: 100%;
+                text-align: center;
+                color: #737373;
+            }
+
+            .timer button, .timer input, .timer select {
+                font-size: 14pt;
+                padding: 1em;
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            .menu {
+                position: absolute;
+                top: 0;
+            }
+
+            .help {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        </style>
+
+        <script src="node_modules/wetfish-basic/dist/basic.js"></script>
+        <script src="node_modules/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <main class="app">
+            <div class="sky">
+                <div class="rainbow">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="cut-off-bottom">
+                                <rect x="0" y="0" width="100" height="50" />
+                            </clipPath>
+                        </defs>
+
+                        <circle class="r" cx="50" cy="50" r="47" stroke="#E31D28" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                        <circle class="o" cx="50" cy="50" r="41" stroke="#ED8C3D" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                        <circle class="y" cx="50" cy="50" r="35" stroke="#FCD234" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                        <circle class="g" cx="50" cy="50" r="29" stroke="#3E9965" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                        <circle class="b" cx="50" cy="50" r="23" stroke="#295167" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                        <circle class="v" cx="50" cy="50" r="17" stroke="#492245" stroke-width="6.2" clip-path="url(#cut-off-bottom)" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="menu">
+                [hamburger]
+
+                [Untitled Project]
+
+                [Dropown arrow to select different projects]
+            </div>
+
+            <div class="timer">
+                <button class="start">Start Tracking</button>
+                <button class="stop hidden">Stop Tracking</button>
+                <input class="tracked" readonly="true" placeholder="Time tracked" value="">
+                <input class="description" placeholder="Description (optional)">
+            </div>
+
+            <div class="help">
+                [Help button]
+            </div>
+        </main>
+    </body>
+</html>
